@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-//import Purchase from '../Purchase/Purchase';
 
 const Store = () => {
     const [bloodGroups, setBloodGroups] = useState([]);
@@ -26,13 +25,6 @@ const Store = () => {
         (selectedBloodGroup === '' || donor.blood_group === selectedBloodGroup) &&        
         (dateFilter === '' || new Date(donor.last_donation_date).toDateString() === new Date(dateFilter).toDateString())
     );
-/*
-    const totalPrice = filteredData.length * 5; // Replace with your desired price per row
-    const handlePurchase = () => {
-        // Implement logic for what should happen after successful purchase
-        console.log('Purchase successful!');
-    };
-*/
 
     return (
         <div>
@@ -45,10 +37,8 @@ const Store = () => {
                 ))}
             </select>
             
-            {/*<input type="text" placeholder="Filter by Blood Group" value={bloodGroupFilter} onChange={handleBloodGroupFilterChange} />*/}
             <label htmlFor="dateFilter">Filter by Date:</label>
             <input type="date" value={dateFilter} onChange={handleDateFilterChange} />
-            {/*<Purchase totalPrice={totalPrice} handlePurchase={handlePurchase} filteredData={filteredData} />*/}
 
             <table>
                 <thead>
